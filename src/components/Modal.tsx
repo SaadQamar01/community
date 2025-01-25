@@ -10,17 +10,17 @@ interface ModalProps {
 }
 
 const Modal: FC<ModalProps> = ({ title, children, isOpen, onClose }) => {
-  const ref = useOutsideClick(onClose, isOpen);
+  const ref = useOutsideClick(onClose, isOpen) as React.RefObject<HTMLDivElement>;
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden'; 
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = ''; 
+      document.body.style.overflow = '';
     }
 
     return () => {
-      document.body.style.overflow = ''; 
+      document.body.style.overflow = '';
     };
   }, [isOpen]);
 
@@ -30,8 +30,8 @@ const Modal: FC<ModalProps> = ({ title, children, isOpen, onClose }) => {
     <div className={styles.overlay}>
       <div
         className={styles.modal}
-        onClick={(e) => e.stopPropagation()}
         ref={ref}
+        onClick={(e) => e.stopPropagation()}
       >
         <div className={styles.header}>
           {title && <h2 className={styles.title}>{title}</h2>}

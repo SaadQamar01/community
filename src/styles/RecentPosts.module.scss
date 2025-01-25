@@ -1,0 +1,44 @@
+@import './variables';
+
+.recentPosts {
+    .sectionTitle {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      color: $text-primary;
+    }
+
+    .postsContainer {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    
+
+      .postCard {
+        background: white;
+        border-radius: 4px;
+        max-height: 300px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        
+        &:hover {
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+        
+        .postImage {
+          width: 100%;
+          height: 150px;
+          object-fit: cover;
+          overflow: hidden;
+        }
+        
+        .postContent {
+          padding: 0.5rem 1rem;
+          font-size: 0.95rem;
+          color: $text-secondary;
+        }
+      }
+    }
+  }

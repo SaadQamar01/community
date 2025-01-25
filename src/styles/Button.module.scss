@@ -1,0 +1,38 @@
+@import './variables';
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  background: $primary-gradient-end;
+  color: white;
+  border-radius: 3px;
+  border: none;
+  transition: 0.3s;
+  
+  &:hover {
+    background: linear-gradient(135deg, $primary-gradient-end 0%, $primary-gradient-start 100%);
+  }
+
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+.small{
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+}
+
+.medium {
+  padding: 1rem ;
+  font-size: 0.6rem;
+}
+
+.large {
+  padding: 1rem 1.2rem;
+  font-size: 0.9rem;
+}

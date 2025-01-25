@@ -1,0 +1,58 @@
+@import './variables';
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 600px;
+  
+    &::-webkit-scrollbar {
+      display: none; 
+    }
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .title {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  
+  .closeButton {
+    font-size: 1.5rem;
+    color: $text-secondary;
+    font-weight: 200;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+  
+    &:hover {
+      color: $text-primary;
+    }
+  }
+  
+  .content {
+    margin-top: 1rem;
+  }
+  
